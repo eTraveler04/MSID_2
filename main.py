@@ -46,13 +46,15 @@ preprocessor = ColumnTransformer(transformers=[
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
 
 models = {
     'Logistic Regression': LogisticRegression(max_iter=1000),
     'Decision Tree': DecisionTreeClassifier(),
-    'SVC': SVC()
+    'SVC': SVC(),
+    "Random Forest": RandomForestClassifier()	
 }
 
 # for name, model in models.items():

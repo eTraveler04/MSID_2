@@ -8,7 +8,7 @@ from utils import *
 
 # Wczytaj plik CSV
 try:
-    df = pd.read_csv('dataset.csv')
+    df = pd.read_csv('data/dataset.csv')
     # df = pd.read_csv("formatted_dataset.csv")
 except FileNotFoundError:
     print("❌ Plik 'dataset.csv' nie został znaleziony.")

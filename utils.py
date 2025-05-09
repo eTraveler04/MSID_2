@@ -40,8 +40,6 @@ numerical_features = [
 
 target_column = 'Target'
 
-
-
 # Lista kolumn do uproszczenia
 high_cardinality_columns = [
     'Application mode',

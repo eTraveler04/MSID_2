@@ -1,4 +1,3 @@
-
 import pandas as pd
 from utils import *
 from sklearn.model_selection import train_test_split
@@ -11,11 +10,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import os
-import joblib
 import matplotlib.pyplot as plt
 
 # Wczytanie danych
-df = pd.read_csv('data/dane_bez1.csv')
+df = pd.read_csv('data/df_ne.csv')
 X = df.drop(columns=['Target'])
 y = df['Target']
 
@@ -43,7 +41,7 @@ preprocessor = ColumnTransformer(transformers=[
 models = {
     'Logistic Regression': LogisticRegression(max_iter=1000),
     'Decision Tree': DecisionTreeClassifier(),
-    'SVC': SVC()
+    'SVC': SVC(),
 }
 
 # Ewaluacja
@@ -78,9 +76,6 @@ for name, model in models.items():
         metrics["Model"] = name
         results.append(metrics)
 
-    if name == "SVC":
-        joblib.dump(pipeline, "results_no_enrolled/final_model.pkl")
-
 # Zapis metryk
 df_results = pd.DataFrame(results)
 df_results.to_csv("results_no_enrolled/dataset_split_results.csv", index=False)
@@ -90,7 +85,7 @@ for metric in ["Accuracy", "F1-score (macro)"]:
     plt.figure(figsize=(8, 5))
     for model_name in df_results["Model"].unique():
         subset = df_results[df_results["Model"] == model_name]
-    plt.plot(subset["Dataset"], subset[metric], label=model_name, marker='o')
+        plt.plot(subset["Dataset"], subset[metric], label=model_name, marker='o')
     plt.title(f'{metric} dla modeli na zbiorach')
     plt.ylabel(metric)
     plt.xlabel('Zbiór danych')

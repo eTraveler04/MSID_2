@@ -1,4 +1,0 @@
-Model,Accuracy,CV Mean Accuracy,Precision (macro avg),Recall (macro avg),F1-score (macro avg)
-Logistic Regression,0.7706,0.7717,0.7169,0.6864,0.6955
-Decision Tree,0.6746,0.6773,0.6104,0.6101,0.61
-SVC,0.7672,0.7697,0.7178,0.68,0.6913

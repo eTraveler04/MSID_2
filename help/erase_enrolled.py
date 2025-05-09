@@ -10,7 +10,7 @@ def remove_rows_with_target_1(infile: str, outfile: str):
         writer.writeheader()
         for row in reader:
             # pomijamy wiersz, gdy Target == '1'
-            if row.get('Target') != '1':
+            if row.get('Target') != '2':
                 writer.writerow(row)
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@ def group_rare_categories(df, column, threshold=0.02):
     return df
 
 def main():
-    df = pd.read_csv("dataset.csv")
+    df = pd.read_csv("data/dataset.csv")
 
     # Uproszczenie rzadkich kategorii
     for col in high_cardinality_columns:
@@ -17,7 +17,7 @@ def main():
         print(f"{col}: {df[col].nunique()} unikalnych wartości po uproszczeniu")
 
     # Zakodowanie kolumny Target
-    target_map = {'Dropout': 0, 'Enrolled': 1, 'Graduate': 2}
+    target_map = {'Dropout': 0, 'Enrolled': 2, 'Graduate': 1}
     df['Target'] = df['Target'].map(target_map)
 
     # Pozostałe kolumny typu object (np. 'Gender', 'Course', itp.)
