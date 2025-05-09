@@ -12,10 +12,10 @@
 
 
 ## Tabela wyników dla własnej implementacji sklearn ( zadanie 3.0 )
-![alt text](image.png)
+![alt text](other/image.png)
 
 ## Tabela wyników dla własnej implementacji regresji logistycznej ( zadanie 4.0 )
-![alt text](image-1.png)
+![alt text](other/image-1.png)
 
 ## 📊 Porównanie wyników regresji logistycznych
 
@@ -46,7 +46,7 @@ precyzyjnych tolerancji numerycznych
 
 Różnice ≤ 0.01
 
-## 4.0 ia Metryki regresji:
+## 4.0 1a Metryki regresji:
 🔹 MSE – Mean Squared Error: 23.2541
 Średnia z kwadratów błędów predykcji
 Im niższy, tym lepiej
@@ -90,8 +90,12 @@ Dla zbiorów o milionach próbek lub dziesiątkach tysięcy cech pojęcie „wsz
 -  Tylko regresja liniowa
 Zamknięta formuła zadziała jedynie dla regresji z MSE (błędem kwadratowym) i modelu liniowego.
 
-- Nie zastosujesz jej do:
-- regresji logistycznej (cross‐entropy)
-- sieci neuronowych
-- innych funkcji kosztu, które nie dają się sprowadzić do odwrócenia jednej macierzy.
+W closed-form nie masz kontroli nad uczeniem
+Nie możesz użyć early stopping, ani śledzić postępu jak w gradient descent
+
+Nie zadziała dobrze, jeśli kolumny są skorelowane
+Jeśli w danych są kolumny, które są kombinacją innych (np. „suma” dwóch kolumn), macierz może być nieodwracalna.
+Wtedy np.linalg.inv(...) może rzucić błąd lub dać niestabilne wyniki
+
+- nie ma pętli, nie robisz tego w każdej epoce jak w gradient descent.
 
