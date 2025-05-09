@@ -20,7 +20,7 @@ def main():
     os.makedirs(results_dir, exist_ok=True)
 
     # 1. Wczytanie danych (wszystkie kolumny numeryczne)
-    df = pd.read_csv("formatted_dataset.csv")
+    df = pd.read_csv("data/formatted_dataset.csv")
 
     counts = df["Target"].value_counts().sort_index()  # liczba próbek w każdej klasie
     props  = df["Target"].value_counts(normalize=True).sort_index() * 100  # procentowo

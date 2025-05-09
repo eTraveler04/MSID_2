@@ -12,10 +12,10 @@
 
 
 ## Tabela wyników dla własnej implementacji sklearn ( zadanie 3.0 )
-![alt text](image-1.png)
+![alt text](image.png)
 
 ## Tabela wyników dla własnej implementacji regresji logistycznej ( zadanie 4.0 )
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## 📊 Porównanie wyników regresji logistycznych
 
@@ -46,6 +46,36 @@ precyzyjnych tolerancji numerycznych
 
 Różnice ≤ 0.01
 
+## 4.0 ia Metryki regresji:
+🔹 MSE – Mean Squared Error: 23.2541
+Średnia z kwadratów błędów predykcji
+Im niższy, tym lepiej
+
+Wartość 23.25 oznacza, że średni błąd podniesiony do kwadratu wynosi 23.25 lat²
+
+🔹 MAE – Mean Absolute Error: 3.3868
+Średnia z wartości bezwzględnych błędów
+Oznacza, że przeciętnie model myli się o 3.39 roku przy przewidywaniu wieku zapisu
+
+Jednostka: lata — bez podnoszenia do kwadratu
+
+🔹 RMSE – Root Mean Squared Error: 4.8223
+Pierwiastek z MSE
+
+Też ma jednostkę „lata”
+Jest bardziej „wrażliwy na duże błędy” niż MAE
+
+Mówi: przeciętnie błąd to ~4.82 roku
+
+🔹 R² – współczynnik determinacji: 0.4800
+Zakres: od 0 do 1 (czasem też <0, jeśli model kompletnie zawodzi)
+
+0.48 oznacza, że Twój model wyjaśnia 48% wariancji wieku zapisu
+
+Pozostałe 52% to „szum” lub coś, czego model nie jest w stanie przewidzieć. 
+
+Więc model jest średni. 
+
 ## 4.0 1b Przeanalizuj ograniczenia zastosowania zamkniętej formuły. Dlaczego nie jest w praktyce wykorzysytwana?
 
 - Koszt obliczeniowy i pamięciowy
@@ -64,3 +94,4 @@ Zamknięta formuła zadziała jedynie dla regresji z MSE (błędem kwadratowym) 
 - regresji logistycznej (cross‐entropy)
 - sieci neuronowych
 - innych funkcji kosztu, które nie dają się sprowadzić do odwrócenia jednej macierzy.
+
