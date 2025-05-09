@@ -2,7 +2,7 @@ import pandas as pd
 from utils import *
 
 
-df = pd.read_csv('formatted_dataset.csv')
+df = pd.read_csv('data/formatted_dataset.csv')
 # df = pd.read_csv('dataset.csv')
 
 # Podział na cechy i etykietę
@@ -10,7 +10,6 @@ X = df.drop(columns=['Target']) # Wszystko poza Target ( dane wejsciowe )
 y = df['Target'] # Dane wyjściowe ( dane do przewidzenia ) 
 
 # Podział na zbiór treningowy i testowy 
-
 from sklearn.model_selection import train_test_split
 
 # 20% pójdzie na dane testowe, 80$ na trening

@@ -145,7 +145,9 @@ def main():
 
     # 1. Wczytanie danych z CSV
     #    - Pandas do I/O, później tylko NumPy na macierzach
-    df = pd.read_csv("formatted_dataset.csv")
+    # df = pd.read_csv("data/formatted_dataset.csv")
+    df = pd.read_csv("data/dane_bez1.csv")
+
 
     counts = df["Target"].value_counts().sort_index()  # liczba próbek w każdej klasie
     props  = df["Target"].value_counts(normalize=True).sort_index() * 100  # procentowo

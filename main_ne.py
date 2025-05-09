@@ -15,7 +15,7 @@ import joblib
 import matplotlib.pyplot as plt
 
 # Wczytanie danych
-df = pd.read_csv('dane_bez1.csv')
+df = pd.read_csv('data/dane_bez1.csv')
 X = df.drop(columns=['Target'])
 y = df['Target']
 

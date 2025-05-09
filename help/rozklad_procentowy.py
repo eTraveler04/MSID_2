@@ -2,7 +2,7 @@ import pandas as pd
 
 # Wczytaj dane
 # df = pd.read_csv("dataset.csv")
-df = pd.read_csv("formatted_dataset.csv")
+df = pd.read_csv("data/formatted_dataset.csv")
 
 # Lista kolumn kategorycznych
 from utils import *
